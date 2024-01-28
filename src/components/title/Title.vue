@@ -1,8 +1,12 @@
 <template>
   <div class="title" :class="type">
     <div class="card" v-if="title" :title="title.Title" @click="openModal()">
-      <div class="card__image">
+      <div class="card__image" v-if="title.Poster">
         <img class="js-image" alt="" :src="title.Poster" />
+      </div>
+      <div class="card__image" v-else>
+        <div class="no-image">No Image</div>
+
       </div>
     </div>
 
@@ -54,9 +58,11 @@ export default {
     },
     favorite() {
       this.heart = !this.heart;
+      console.log("feito");
     },
   },
   created() {
+    console.log(this.type);
   },
 };
 </script>

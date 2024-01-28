@@ -42,7 +42,7 @@ const routes = [{
         ],
         title: router => {
 
-            return  store.getters.selectedTitle.status ? store.getters.selectedTitle.data.title : "Carregando..." ;
+            return store.getters.selectedTitle.status ? store.getters.selectedTitle.data.title : "Carregando...";
         }
     },
     beforeEnter: (to, from, next) => {
@@ -65,28 +65,29 @@ const routes = [{
         ],
         title: router => { return "Onde Assistir" }
     },
-    beforeEnter: (to, from, next) => {
+    // beforeEnter: (to, from, next) => {
 
+    //     // var query = to.params?.query || '';
 
-        // Pega a ultimas rotas
-        var prevRoute = store.getters.prevRoute;
+    //     // // Pega a ultimas rotas
+    //     // var prevRoute = store.getters.prevRoute;
 
-        var lastQuery = 'Not defined';
-        // pega a ultima query rodada a duas rotas (efeito de abrir e fechar o modal)
-        if (prevRoute[prevRoute.length - 2]) {
-            lastQuery = prevRoute[prevRoute.length - 2].params.query;
-        }
+    //     // var lastQuery = 'Not defined';
+    //     // // pega a ultima query rodada a duas rotas (efeito de abrir e fechar o modal)
+    //     // if (prevRoute[prevRoute.length - 2]) {
+    //     //     lastQuery = prevRoute[prevRoute.length - 2].params.query;
+    //     // }
 
-        // verifica se a ultima query rodada é a mesma que a atual
-        // Se for, não atualiza o valor do update search, se atualizar 
-        // vai recarregar a pagina fazendo perder a posição do usuário na lista de busca
-        if (to.params.query != lastQuery) {
-            store.dispatch('updateSearch', to.params.query);
-        }
+    //     // // verifica se a ultima query rodada é a mesma que a atual
+    //     // // Se for, não atualiza o valor do update search, se atualizar 
+    //     // // vai recarregar a pagina fazendo perder a posição do usuário na lista de busca
+    //     // if (query != lastQuery) {
+    //     //     store.dispatch('updateSearch', query);
+    //     // }
 
-        // store.dispatch('updateSearch', to.params.query);
-        next();
-    }
+    //     // store.dispatch('updateSearch', to.params.query);
+    //     next();
+    // }
 },
 {
     path: '/users',
@@ -139,7 +140,7 @@ router.beforeEach((to, from, next) => {
     next();
 })
 
-router.afterEach((to, from) => {    
+router.afterEach((to, from) => {
     // Vue.nextTick(() => {
     //     document.title = to.meta.title(to);
     // })

@@ -32,16 +32,17 @@ export default {
         // const fast = () => this.$store.dispatch("updateSearch", value);
         const fast = () => {
           this.$store.dispatch("updateSearch", value);
-          this.$router
-            .push({ name: "TitleSearch", params: { query: value } })
-            .catch((error) => {
-              if (error.name != "NavigationDuplicated") {
-                throw error;
-              }
-            });
+          // this.$router
+          //   .push({ name: "TitleSearch", params: { query: value, dontLoad: null } })
+            // .catch((error) => {
+            //   console.log("new error", error)
+            //   if (error.name != "NavigationDuplicated") {
+            //     throw error;
+            //   }
+            // });
         };
 
-        //Executa  update do search quando o retonor vazia para agilizar
+        //Executa  update do search quando o retorno vazia para agilizar
         if (value == "") {
           fast();
         }
