@@ -1,6 +1,11 @@
 <template>
     <div class="container-slider">
-        <div class="cover">cover</div>
+        <div class="container-cover">
+            <div class="cover">
+                <img src="https://via.placeholder.com/1138x290" alt="Cover" />
+            </div>
+
+        </div>
         <div class="itens-slider">
             <div class="item">1</div>
             <div class="item">2</div>

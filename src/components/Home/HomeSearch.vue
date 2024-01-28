@@ -1,6 +1,6 @@
 <template>
     <div class="container-search">
-        <input type="search" name="search" id="search">
+        <input type="search" name="search" id="search" placeholder="O que você está procurando?">
     </div>
 </template>
 
