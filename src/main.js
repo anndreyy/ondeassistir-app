@@ -1,31 +1,14 @@
-import { createApp } from 'vue';
-import App from './App.vue';
-import router from './router';
-import store from './store';
-import './registerServiceWorker';
+import './assets/main.scss'
 
-// Import normalize
-import 'normalize.css';
-import "@/assets/style.scss";
-import "@/assets/responsive.scss";
+import { createApp } from 'vue'
+import { createPinia } from 'pinia'
 
-// Sidebar Modal
-// import SidebarModal from 'vue-sidebar-modal';
+import App from './App.vue'
+import router from './router'
 
-// Disqus
-import VueDisqus from 'vue-disqus';
+const app = createApp(App)
 
-// Helper
-import interceptorsSetup from '@/helpers/interceptors';
-interceptorsSetup();
+app.use(createPinia())
+app.use(router)
 
-const app = createApp(App);
-
-app.use(router);
-app.use(store);
-// app.use(SidebarModal);
-// app.use(VueDisqus, {
-//   shortname: 'onde-assistir'
-// });
-
-app.mount('#app');
+app.mount('#app')

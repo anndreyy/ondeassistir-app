@@ -1,19 +1,9 @@
-<template>
-  <div id="app">
-    <Loading v-if="$store.getters.loading" />
-    <router-view/>
-  </div>
-</template>
-<script>
-import Loading from "@/components/commons/Loading.vue"
+<script setup>
+import HeaderVue from "./components/Commons/Header.vue";
 
-
-export default {
-  components:{
-    Loading
-  },
-}
 </script>
 
-<style lang="scss">
-</style>
+<template>
+  <HeaderVue />
+  <RouterView />
+</template>
